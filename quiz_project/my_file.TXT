@@ -1,0 +1,4 @@
+admin menyusununa daxil olmaq ucun 
+name: admin
+password: admin
+diqqet ucun tesekkur

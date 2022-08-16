@@ -1,0 +1,24 @@
+﻿Azerbaycanin paytaxti haradir?
+Baki
+Selyan
+Qazax
+İsmayilli
+a
+10+2 nece edir?
+3
+4
+12
+null
+c
+Rusiyanin paytaxti haradir?
+Almata
+Moskva
+null
+null
+b
+En ucuz taksi hansidir
+Bolt
+2111
+Uber
+null
+a
