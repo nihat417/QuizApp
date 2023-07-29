@@ -2,6 +2,7 @@
 class menuall {
 private:
     int choise = 0;
+    int numQuestions;
 
     bool start = true;
 
@@ -424,11 +425,20 @@ public:menuall() = default;
                     cout << "Enter name of quiz: ";
                     cin >> filename;
                     filename.append(".txt");
-                    quiz.add_new_question(filename);
+
+                    cout << "How many questions do you want to add? ";
+                    cin >> numQuestions;
+
+                    cin.ignore();
+
+                    for (int i = 0; i < numQuestions; ++i) {
+                        quiz.add_new_question(filename);
+                    }
 
                 }
                 else if (choise2 == 1) {
                     system("cls");
+                    allfiles();
                     f.load();
                 }
                 else {

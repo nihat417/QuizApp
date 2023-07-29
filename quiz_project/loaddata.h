@@ -77,6 +77,29 @@ public:
                     wrong++;
                     system("cls");
                 }
+
+                char option;
+                cout << "Next (n) / Previous (p) / Finish (f): ";
+                cin >> option;
+
+                if (option == 'n') {
+                    system("cls");
+                    continue;
+                }
+                else if (option == 'p') {
+                    if (pointer > 0) {
+                        pointer -= 2;
+                        system("cls");
+                    }
+                    continue;
+                }
+                else if (option == 'f') {
+                    result_game(correct_count, wrong);
+                    break;
+                }
+                else {
+                    cout << "Invalid option. Try again." << endl;
+                }
             }
         }
         f.close();

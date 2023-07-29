@@ -7,20 +7,21 @@ private:
     string answer3 = "null";
     string answer4 = "null";
     char correct;
-public:
 
+public:
     Quiz() = default;
 
-    void add_new_question(string name)
-    {
+    void add_new_question(string name) {
         fstream fout(name, ios::app);
 
         Quiz question;
         short size;
+
         cin.ignore();
         cout << "Enter question text: ";
         getline(cin, question.text);
-        cout << "how many questions Do you want to addÆ ";
+
+        cout << "How many answers do you want to add? (2-4): ";
         cin >> size;
 
         cout << "Enter answer 1: ";
@@ -28,18 +29,17 @@ public:
         cout << "Enter answer 2: ";
         cin >> question.answer2;
 
-        if (size == 3) {
+        if (size >= 3) {
             cout << "Enter answer 3: ";
             cin >> question.answer3;
         }
-        else if (size == 4) {
-            cout << "Enter answer 3: ";
-            cin >> question.answer3;
+
+        if (size == 4) {
             cout << "Enter answer 4: ";
             cin >> question.answer4;
         }
 
-        cout << "which is right? ";
+        cout << "Which is the correct answer (A, B, C, D)? ";
         cin >> question.correct;
 
         question.write_file(fout);
@@ -52,5 +52,6 @@ public:
         fs << answer3 << endl;
         fs << answer4 << endl;
         fs << correct << endl;
+        fs << endl;
     }
 };
