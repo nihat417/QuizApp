@@ -10,12 +10,11 @@ void setColor(Color text, Color background)
 {
     HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(hStdOut, (WORD)((background << 4) | text));
-}//reng ucun
+}
 
-
-void SetCursor(int x, int y) //x y e gore kordinat
+void SetCursor(int x, int y)
 {
     HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
     COORD Coord = { x,y };
-    SetConsoleCursorPosition(hStdOut, Coord); //lazimi kordinata kecid
+    SetConsoleCursorPosition(hStdOut, Coord);
 }

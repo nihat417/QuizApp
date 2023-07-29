@@ -83,6 +83,7 @@ public:
                     continue;
                 }
                 if (choose == 'f') {
+                    system("cls");
                     result_game(correct_count, wrong);
                     break;
                 }

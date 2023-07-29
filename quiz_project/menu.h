@@ -3,9 +3,7 @@ class menuall {
 private:
     int choise = 0;
     int numQuestions;
-
     bool start = true;
-
     string filename;
     string adminname;
     string adminpassword;
@@ -60,8 +58,6 @@ public:menuall() = default;
         }
     }
     
-
-
     void startquiz() {
         setColor(Yellow, Black);
         SetCursor(50, 5);
