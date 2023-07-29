@@ -190,17 +190,19 @@ public:
                 }
             }
 
-            if (validUser) {
-                // Handle the login success here...
-
-
-
+            if (validUser) 
+            {
                 for (size_t i = 0; i < users.size(); i++)
                 {
                     if (users[i].login_chek(player_name, player_password)) {
 
-                        SetCursor(50, 8);
+                        
                         system("cls");
+
+                        setColor(Yellow, Black);
+                        SetCursor(50, 5);
+                        cout << "oxlari terpedin davam etmek ucun...";
+
                         SetCursor(50, 4);
                         setColor(Green, Black);
                         bool start1 = true;
