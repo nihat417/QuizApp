@@ -66,10 +66,26 @@ public:
                 if (f.eof())
                     break;
 
+                cout << "Next (n) / Previous (p) / Finish (f): ";
                 cin >> choose;
                 getline(f, line);
                 correct = line[0];
 
+                if (choose == 'n') {
+                    system("cls");
+                    continue;
+                }
+                else if (choose == 'p') {
+                    if (pointer > 0) {
+                        pointer -= 2;
+                        system("cls");
+                    }
+                    continue;
+                }
+                if (choose == 'f') {
+                    result_game(correct_count, wrong);
+                    break;
+                }
                 if (correct == choose) {
                     correct_count++;
                     system("cls");
@@ -78,30 +94,13 @@ public:
                     wrong++;
                     system("cls");
                 }
-
-               
-                cout << "Next (n) / Previous (p) / Finish (f): ";
-                cin >> option;
-
-                if (option == 'n') {
-                    system("cls");
-                    continue;
-                }
-                else if (option == 'p') {
-                    if (pointer > 0) {
-                        pointer -= 2;
-                        system("cls");
-                    }
-                    continue;
-                }
-                else if (option == 'f') {
-                    result_game(correct_count, wrong);
-                    break;
-                }
                 else {
                     cout << "Invalid option. Try again." << endl;
                 }
             }
+
+               
+               
         }
         f.close();
         result_game(correct_count, wrong);
