@@ -30,21 +30,24 @@ public:
     string get_name() { return _name; }
     string get_password() { return _password; }
 
+
     void sing_up() {
         ofstream fout("Users.txt", ios_base::app);
 
-        if (!fout)
-            throw new exception("File can not created");
+        if (!fout) {
+            throw new exception("File can not be created");
+        }
 
         if (!fout.is_open()) {
             fout.close();
-            throw new exception("File can not opened");
+            throw new exception("File can not be opened");
         }
 
-        fout << _name << ":" << _password << ":" << endl;
+        fout << _name << "," << _password << "," << endl;
 
         fout.close();
     }
+
 
     bool login_chek(string name, string password) {
         return name == _name && _password == password;
