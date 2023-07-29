@@ -25,7 +25,7 @@ public:
 
 
     void load() {
-        SetCursor(30, 4);
+        SetCursor(60, 8);
         cin.get();
         fstream f;
         cout << "Filename: ";

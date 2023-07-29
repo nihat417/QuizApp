@@ -23,8 +23,7 @@ private:
     load_data_file f;
     Quiz quiz;
 
-public:
-    menuall() = default;
+public:menuall() = default;
 
     void userdata() {
         ifstream fin("Users.txt", ios::in);
@@ -51,7 +50,20 @@ public:
         fin.close();
     }
 
+    void allfiles() {
+        int c = 8;
+        WIN32_FIND_DATA findFileData;
+        HANDLE hFind = FindFirstFile(L"*.txt", &findFileData);
 
+        if (hFind != INVALID_HANDLE_VALUE) {
+            do {
+                SetCursor(40, c++);
+                std::wcout << findFileData.cFileName << std::endl;
+            } while (FindNextFile(hFind, &findFileData) != 0);
+
+            FindClose(hFind);
+        }
+    }
     
 
 
@@ -185,7 +197,6 @@ public:
             for (size_t i = 0; i < users.size(); i++) {
                 if (users[i].login_chek(player_name, player_password)) {
                     validUser = true;
-                    // Rest of the login logic here...
                     break;
                 }
             }
@@ -194,11 +205,9 @@ public:
             {
                 for (size_t i = 0; i < users.size(); i++)
                 {
-                    if (users[i].login_chek(player_name, player_password)) {
-
-                        
+                    if (users[i].login_chek(player_name, player_password)) 
+                    {    
                         system("cls");
-
                         setColor(Yellow, Black);
                         SetCursor(50, 5);
                         cout << "oxlari terpedin davam etmek ucun...";
@@ -268,6 +277,8 @@ public:
                         if (choise1 == 0) {
                             system("cls");
                             setColor(White, Black);
+                            
+                            allfiles();
 
                             f.load();
                         }
@@ -298,25 +309,32 @@ public:
             }
         }
         else if (choise == 1) {
-
+            system("cls");
+            SetCursor(50, 5);
             cout << "Enter name: ";
             cin >> name_player_new;
+            SetCursor(50, 5);
             cout << "Enter Password: ";
             cin >> password_player_new;
-
-
 
             for (size_t i = 0; i < users.size(); i++)
             {
                 if (users[i].get_name() == name_player_new)
+                {
                     cout << "bu ad artiq movcuddur" << endl;
-                break;
+                    break;
+                }
             }
 
             Users user(name_player_new, password_player_new);
             user.sing_up();
             users.push_back(user);
+            SetCursor(50, 7);
             cout << "Succesfully Signed Up" << endl;
+            Sleep(3000);
+            system("cls");
+
+           
         }
         else if (choise == 2)
         {
