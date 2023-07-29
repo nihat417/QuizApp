@@ -7,16 +7,10 @@ private:
     bool start = true;
 
     string filename;
-
-    //adminn
     string adminname;
     string adminpassword;
-
-    //movcud istfadeci
     string player_name;
     string player_password;
-
-    //qeydyat ucun
     string name_player_new;
     string password_player_new;
 
@@ -343,6 +337,7 @@ public:menuall() = default;
             setColor(Yellow, Black);
             SetCursor(50, 5);
             cout << "Enter vurun davam etmek ucun...";
+            allfiles();
             f.load();
         }
         else if (choise == 3) {

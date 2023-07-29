@@ -45,6 +45,7 @@ public:
         {
             string line;
             char choose;
+            char option;
             char correct;
             int c = 5;
             int l = 3;
@@ -53,7 +54,7 @@ public:
             {
                 getline(f, line);
                 SetCursor(25, l);
-                cout << "\t" << line << endl;
+                cout << line << endl;
                 char a = 65;
                 for (size_t i = 0; i < 4; i++)
                 {
@@ -78,7 +79,7 @@ public:
                     system("cls");
                 }
 
-                char option;
+               
                 cout << "Next (n) / Previous (p) / Finish (f): ";
                 cin >> option;
 
